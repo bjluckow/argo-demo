@@ -1,0 +1,50 @@
+{
+  "name": "argo-demo-original",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@blueprintjs/core": "^5.16.2",
+    "@blueprintjs/icons": "^5.16.0",
+    "@blueprintjs/select": "^5.3.7",
+    "@types/cheerio": "^0.22.35",
+    "axios": "^1.7.9",
+    "better-sqlite3": "^11.7.0",
+    "cheerio": "^1.0.0",
+    "drizzle-kit": "^0.30.1",
+    "drizzle-orm": "^0.38.2",
+    "lowdb": "^7.0.1",
+    "next": "15.1.0",
+    "puppeteer": "^23.10.4",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "robots-parser": "^3.0.1",
+    "tslog": "^4.9.3",
+    "xml2js": "^0.6.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "drizzle-kit": "^0.30.1",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "postcss": "^8",
+    "prettier": "^3.4.2",
+    "prettier-eslint": "^16.3.0",
+    "prettier-plugin-tailwindcss": "^0.6.9",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
