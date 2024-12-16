@@ -73,7 +73,17 @@ identifying a pattern in a site's article URLs, the user could create "routines"
 containing JSON instructions that mapped to headless browser functionality (e.g.
 click a selector or extract an element's data). When a matching link was visited
 by a crawler, this routine was used to interact with and extract data from the
-underlying browser webpage.
+underlying browser webpage. Crawling rules, such as a delay between visits,
+could be set on a per-site or per-crawl basis.
+
+Sites, links, scrapes, crawls, and errors were all stored to a local SQLite
+database. Site configurations were stored separately in a JSON file and linked
+to SQLite rows by IDs. Links were indexed and cached so as to avoid duplicate
+page visits, while serialized errors were used to temporarily disable sites for
+crawling in the event of apparent blocking. Most of the final functionality
+revolved around managing sites and executing crawls, as I would export collected
+data to Python projects directly, although I left room for eventual analysis
+features.
 
 ## Retrospective
 
@@ -92,9 +102,23 @@ not-overly-convoluted, but definitely **not built with deployment in mind**:
   browser automation. This was also an interesting choice as almost none of the
   news sources I ultimately scraped needed JavaScript rendering, but at least
   the system's flexible.
+- An entire "Scan Service" section of code existed solely for organization and
+  had nothing to do with being deployed indepedently as a service. However, this
+  proved useful and helped me avoid accidentally loading Puppeteer (and thereby
+  an entire Chrome installation) when using engine types in the frontend.
 - I'm very good at thinking ahead when it comes to potential future features. I
   can't imagine I implemented any of those. I was already working on more
   general browser automation projects after graduation.
 - No polish was applied; I think the last major efforts were done in the leadup
   to the aforementioned project deadline. The takeaway here was that CLI apps
   are easier to develop.
+
+Despite its flaws, this project did actually collect enough data to push my
+SQLite database to its limits and get me a decent grade on that NLP model. And
+thanks to the React, Tailwind, and NextJS experience, I was also able to whip up
+a personal website for my ENGRC class in about two days. The lessons learned and
+the experience with the tools were invaluable as I headed towards graduation,
+and this exercise was an amazing jumping-off point into thinking about
+end-to-end full stack development and how to architect complex systems. This
+project will always have a special place in my heart along with all my friends
+with whom I graduated.
